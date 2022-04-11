@@ -1,28 +1,36 @@
 import React, { useState } from 'react';
-
+import '../style/shift_ciper.scss'
 const Shift_ciper = () => {
 
-  const [text, setText] = useState("TONPUED");
+  const [text, setText] = useState("love");
   const [newText, setNewText] = useState("");
-  const [key, setKey] = useState(5);
+  const [key, setKey] = useState(3);
   const table = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
   function shift_text_encode() {
-    const char_planText = text.toLowerCase().split('');
+    const char_plainText = text.toLowerCase().split('');
     let text2 = []
     for (let i = 0; i < text.length; i++) {
-      let index = table.indexOf(char_planText[i]);
-      text2.push(table[(index+key) % table.join('').length]);
+      if(char_plainText[i] === " ") {
+        text2.push(" ");
+      } else {
+        let index = table.indexOf(char_plainText[i]);
+        text2.push(table[(index+key) % table.join('').length]);
+      }
     }
     setNewText(text2.join('').toUpperCase());
   }
 
   function shift_text_decode() {
-    const char_planText = text.toLowerCase().split('');
+    const char_plainText = text.toLowerCase().split('');
     let text2 = []
     for (let i = 0; i < text.length; i++) {
-      let index = table.indexOf(char_planText[i]);
-      text2.push(table[(Math.abs(index-key)) % table.join('').length]);
+      if(char_planiText[i] === " ") {
+        text2.push(" ");
+      } else {
+        let index = table.indexOf(char_plainText[i]);
+        text2.push(table[(Math.abs(index-key)) % table.join('').length]);
+      }
     }
     setNewText(text2.join('').toUpperCase());
   }
