@@ -1,13 +1,13 @@
 import React from 'react'
-import '../style/rsa.scss'
- function Rsa() {
+import '../style/viginear_cipher.scss'
+function Viginear_cipher() {
   return (
     <div>
       {/* <span>{newText}</span>
       <button onClick={() => shift_text_encode()} >click</button> */}
       <header id='head'>
         <div className='container-header'>
-          <h1 className='text-header'>RSA</h1>
+          <h1 className='text-header'>Viginear cipher</h1>
         </div>
       </header>
       <div className='bodyMain'>
@@ -16,7 +16,7 @@ import '../style/rsa.scss'
             <div className='key-body'>
                 <label id='keybody'>Key : </label>
             </div>
-            <input id='input-key' min='0' max='25' type="number" />
+            <input id='input-keyVi' type="text" />
           </div>
           <div className='bottom-body'>
             <div className='bodyCipher'>
@@ -45,4 +45,4 @@ import '../style/rsa.scss'
     </div>
   )
 }
-export default Rsa;
+export default Viginear_cipher;

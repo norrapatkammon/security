@@ -35,16 +35,15 @@
                    font-weight: bold;
                }
             }
-            #input-key {
+            #input-keyVi {
                 border-radius: 3px;
-                text-align: center;
                 overflow: auto;
                 resize: vertical;
                 padding: 0.75rem 0.75rem;
                 margin: 5px 0 5px 0;
                 background-color: #F7FAFE;
                 border: solid 0.5px #c1c1c144;
-                width: calc(100% - 34.5rem);
+                width: 200px !important;
                 max-height: 10px;
                 transition: border .15s ease-in-out;
                 outline: none;
