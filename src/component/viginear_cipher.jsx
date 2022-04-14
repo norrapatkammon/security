@@ -10,7 +10,7 @@ function Viginear_cipher() {
           <h1 className='text-header'>Viginear cipher</h1>
         </div>
       </header>
-      <div className='bodyMain'>
+      <div className='bodyMainvigi'>
         <div className='body'>
           <div className='top-body'>
             <div className='key-body'>

@@ -10,7 +10,7 @@ import '../style/rsa.scss'
           <h1 className='text-header'>RSA</h1>
         </div>
       </header>
-      <div className='bodyMain'>
+      <div className='bodyMainrsa'>
         <div className='body'>
           <div className='top-body'>
             <div className='key-body'>

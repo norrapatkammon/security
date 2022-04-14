@@ -72,8 +72,6 @@ const Shift_ciper = () => {
                 <textarea id="textBody" cols="30" rows="10"></textarea>
             </div>
           </div>
-
-          
           <div className='btn-decipher'>
             <i id='text-btn'>Decrypt</i>
           </div>

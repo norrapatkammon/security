@@ -10,7 +10,7 @@ function Monoalphabetic() {
           <h1 className='text-header'>Monoalphabetic cipher</h1>
         </div>
       </header>
-      <div className='bodyMain'>
+      <div className='bodyMainmono'>
         <div className='body'>
           <div className='top-body'>
             <div className='key-body'>
