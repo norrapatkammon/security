@@ -16,7 +16,11 @@ function Viginear_cipher() {
             <div className='key-body'>
                 <label id='keybody'>Key : </label>
             </div>
-            <input id='input-keyVi' type="text" />
+            <div className='box-top'>
+                <input id='input-keyVi' type="text" />
+                <i id='clear-btn'>Clear</i>
+            </div>
+            
           </div>
           <div className='bottom-body'>
             <div className='bodyCipher'>

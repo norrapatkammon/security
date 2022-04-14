@@ -16,7 +16,10 @@ function Monoalphabetic() {
             <div className='key-body'>
                 <label id='keybody'>Key : </label>
             </div>
-            <input id='input-key' min='0' max='25' type="number" />
+            <div className='box-top'>
+              <input id='input-key' min='0' max='25' type="number" />
+              <i id='clear-btn'>Clear</i>
+            </div> 
           </div>
           <div className='bottom-body'>
             <div className='bodyCipher'>

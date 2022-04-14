@@ -34,22 +34,45 @@
                    font-weight: bold;
                }
             }
-            #input-key {
-                border-radius: 3px;
-                text-align: center;
-                overflow: auto;
-                resize: vertical;
-                padding: 0.75rem 0.75rem;
-                margin: 5px 0 5px 0;
-                background-color: #F7FAFE;
-                border: solid 0.5px #c1c1c144;
-                width: calc(100% - 34.5rem);
-                max-height: 10px;
-                transition: border .15s ease-in-out;
-                outline: none;
-                font-size: 15px;
-                &:focus {
-                border: 1px solid #0062FF;
+            .box-top {
+                display: flex;
+                justify-content: space-between;
+                #input-key {
+                    border-radius: 3px;
+                    text-align: center;
+                    overflow: auto;
+                    resize: vertical;
+                    padding: 0.75rem 0.75rem;
+                    margin: 5px 0 5px 0;
+                    background-color: #F7FAFE;
+                    border: solid 0.5px #c1c1c144;
+                    width: calc(100% - 34.5rem);
+                    max-height: 10px;
+                    transition: border .15s ease-in-out;
+                    outline: none;
+                    font-size: 15px;
+                    &:focus {
+                    border: 1px solid #0062FF;
+                    }
+                }
+                #clear-btn {
+                    margin-right: 63px;
+                    font-size: 14px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 150px;
+                    padding: 10px 0px;
+                    color: white;
+                    background-color: #ffbb00d2;
+                    margin-bottom: 5px;
+                    user-select: none;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #ffbb008c ;
+                    }
                 }
             }
         }
@@ -89,6 +112,7 @@
             display: flex;
             margin: 15px 0 15px 385px;
             #text-btn {
+                font-weight: bold;
                 font-size: 14px;
                 display: flex;
                 align-items: center;
@@ -110,6 +134,7 @@
             display: flex;
             margin: 15px 0 15px 385px;
             #text-btn {
+                font-weight: bold;
                 font-size: 14px;
                 display: flex;
                 align-items: center;
