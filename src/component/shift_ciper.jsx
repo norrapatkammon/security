@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../style/shift_ciper.scss'
 const Shift_ciper = () => {
 
-  const [text, setText] = useState("love");
+  const [text, setText] = useState("ORYH");
   const [newText, setNewText] = useState("");
   const [key, setKey] = useState(3);
   const table = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -25,21 +25,21 @@ const Shift_ciper = () => {
     const char_plainText = text.toLowerCase().split('');
     let text2 = []
     for (let i = 0; i < text.length; i++) {
-      if(char_planiText[i] === " ") {
+      if(char_plainText[i] === " ") {
         text2.push(" ");
       } else {
         let index = table.indexOf(char_plainText[i]);
         text2.push(table[(Math.abs(index-key)) % table.join('').length]);
       }
     }
-    setNewText(text2.join('').toUpperCase());
+    setNewText(text2.join('').toLocaleLowerCase());
   }
 
 
   return (
     <div>
       {/* <span>{newText}</span>
-      <button onClick={() => shift_text_encode()} >click</button> */}
+      <button onClick={() => shift_text_decode()} >click</button> */}
       <header id='head'>
         <div className='container-header'>
           <h1 className='text-header'>Shift cipher</h1>
@@ -65,14 +65,14 @@ const Shift_ciper = () => {
             </div>
           </div>
           <div className='btn-encipher'>
-            <i id='text-btn'>Encrypt</i>
+            <i onClick={() => shift_text_decode()} id='text-btn'>Encrypt</i>
           </div>
           <div className='bottom-body'>
             <div className='bodyCipher'>
               <div className='text-area'>
                 <label id='labelbody'>CipherText : </label>
               </div>
-                <textarea id="textBody" cols="30" rows="10"></textarea>
+                <textarea id="textBody" cols="30" rows="10">{newText}</textarea>
             </div>
           </div>
           <div className='btn-decipher'>
