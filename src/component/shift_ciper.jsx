@@ -65,7 +65,7 @@ const Shift_ciper = () => {
             </div>
           </div>
           <div className='btn-encipher'>
-            <i onClick={() => shift_text_decode()} id='text-btn'>Encrypt</i>
+            <i id='text-btn'>Encrypt</i>
           </div>
           <div className='bottom-body'>
             <div className='bodyCipher'>
