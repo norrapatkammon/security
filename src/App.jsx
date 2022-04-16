@@ -13,7 +13,6 @@ function App() {
       <Navbar/>
       <Switch>
         <Route exact path="/" component={Shift_ciper}/>
-        <Route path="/shift_ciper" component={Shift_ciper}/>
         <Route path="/monoalphabetic" component={Monoalphabetic}/>
         <Route path="/Viginear_cipher" component={Viginear_cipher}/>
         <Route path="/rsa" component={Rsa}/>

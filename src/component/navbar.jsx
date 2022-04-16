@@ -5,7 +5,7 @@ function Navbar() {
     <div id='main'>
       <nav>
         <ul className='list'>
-          <li><a href="Shift_ciper">Shift cipher</a></li>
+          <li><a href="/">Shift cipher</a></li>
           <li><a href="Monoalphabetic">Monoalphabetic</a></li>
           <li><a href="Viginear_cipher">Viginear_cipher</a></li>
           <li><a href="Rsa">Rsa</a></li>
