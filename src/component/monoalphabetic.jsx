@@ -5,6 +5,7 @@ const Monoalphabetic = () => {
 
   const [text, setText] = useState("");
   const [newText, setNewText] = useState("");
+  const [plainText, setPlainText] = useState("")
   const [key, setKey] = useState(0);
   const table = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
@@ -23,20 +24,21 @@ const Monoalphabetic = () => {
   }
 
   function monoalphabetic_decode() {
-    const char_plainText = text.toLowerCase().split('');
+    const char_plainText = newText.toLowerCase().split('');
     let text2 = []
-    for (let i = 0; i < text.length; i++) {
+    for (let i = 0; i < newText.length; i++) {
       if(char_plainText[i] === " ") {
         text2.push(" ");
       }else{
         let index = table.indexOf(char_plainText[i]);
-        text2.push(table[(Math.abs(index-key)) % table.join('').length]);
+        text2.push(table[(table.join('').length+(index-key)) % table.join('').length]);
       }
     }
-    setNewText(text2.join('').toUpperCase());
+    setPlainText(text2.join('').toUpperCase());
   }
   
   function clean() {
+    setPlainText("")
     setText("")
     setNewText("")
     setKey(0)
@@ -83,7 +85,15 @@ const Monoalphabetic = () => {
           </div>
           <div className='btn-decipher'>
             <i onClick={() => monoalphabetic_decode()} id='text-btn'>Decrypt</i>
-          </div>
+          </div>  
+          <div className='bottom-body'>
+            <div className='bodyCipher'>
+              <div className='text-area'>
+                <label id='labelbody'>PlainText : </label>
+              </div>
+                <textarea id="textBody" cols="30" rows="10" value={plainText}></textarea>
+            </div>
+          </div>       
         </div>
       </div>
     </div>
