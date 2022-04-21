@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import '../style/shift_ciper.scss'
+
 const Shift_ciper = () => {
 
   const [text, setText] = useState("");
   const [newText, setNewText] = useState("");
+  const [plainText, setPlainText] = useState("");
   const [shiftIndex, setShiftIndex] = useState(0);
   const table = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
@@ -30,15 +32,17 @@ const Shift_ciper = () => {
         text2.push(" ");
       } else {
         let index = table.indexOf(char_plainText[i]);
-        text2.push(table[(Math.abs(index-shiftIndex)) % table.join('').length]);
+        text2.push(table[(table.join('').length+(index-shiftIndex)) % table.join('').length]);
       }
     }
-    setText(text2.join('').toUpperCase());
+    setPlainText(text2.join('').toUpperCase());
+    
   }
 
   function clean() {
     setText("")
     setNewText("")
+    setPlainText("")
     setShiftIndex(0)
   }
 
@@ -83,6 +87,14 @@ const Shift_ciper = () => {
           </div>
           <div className='btn-decipher'>
             <i onClick={() => shift_text_decode()} id='text-btn'>Decrypt</i>
+          </div>
+          <div className='bottom-body'>
+            <div className='bodyCipher'>
+              <div className='text-area'>
+                <label id='labelbody'>PlainText : </label>
+              </div>
+                <textarea id="textBody" cols="30" rows="10" value={plainText}></textarea>
+            </div>
           </div>
         </div>
       </div>

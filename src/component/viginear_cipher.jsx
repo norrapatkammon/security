@@ -5,8 +5,9 @@ const Viginear_cipher = () => {
 
   const [text, setText] = useState("");
   const [newText, setNewText] = useState("");
+  const [plainText, setPlainText] = useState("");
   const [key, setKey] = useState("");
-  const table = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  const table = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' , '0', '1', '2', '3', '4', '5', '6','7', '8', '9'];
 
   function viginear_text_encode() {
     const char_plainText = text.toLowerCase().split('');
@@ -64,10 +65,11 @@ const Viginear_cipher = () => {
         number += 1;
       }
     }
-    setText(text2.join('').toUpperCase());
+    setPlainText(text2.join('').toUpperCase());
   }
 
   function clean() {
+    setPlainText("")
     setText("")
     setNewText("")
     setKey("")
@@ -89,8 +91,7 @@ const Viginear_cipher = () => {
             <div className='box-top'>
                 <input onChange={(e) => setKey(e.target.value)} id='input-keyVi' type="text" value={key} />
                 <i onClick={() => clean()} id='clear-btn'>Clear</i>
-            </div>
-            
+            </div>           
           </div>
           <div className='bottom-body'>
             <div className='bodyCipher'>
@@ -113,6 +114,14 @@ const Viginear_cipher = () => {
           </div>
           <div className='btn-decipher'>
             <i onClick={() => viginear_text_decode()} id='text-btn'>Decrypt</i>
+          </div>
+          <div className='bottom-body'>
+            <div className='bodyCipher'>
+              <div className='text-area'>
+                <label id='labelbody'>PlainText : </label>
+              </div>
+                <textarea id="textBody" cols="30" rows="10" value={plainText}></textarea>
+            </div>
           </div>
         </div>
       </div>
